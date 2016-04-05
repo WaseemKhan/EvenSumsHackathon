@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EvenSumsApplication
 {
-    class Solution
+    class Solution5
     {
         public string solution(int[] sumsArray)
         {
@@ -87,12 +87,15 @@ namespace EvenSumsApplication
         {
             List<List<String>> AllMoves = new List<List<string>>();
 
-            for(int PopCounter=1; PopCounter <= sumsArray.Count(); PopCounter++)
+            for(int PopCounter=sumsArray.Count(); PopCounter >= 1; PopCounter--)
             {
                 List<String> Moves = MakeMoves(sumsArray, PopCounter);
 
                 if (Moves.Count()>0)
+                {
+                    Moves.Sort();
                     AllMoves.Add(Moves);
+                }
             }
 
             return AllMoves;
@@ -164,79 +167,3 @@ namespace EvenSumsApplication
         }
     }
 }
-
-//bool isEven(int num)
-//{
-//    return ((num % 2) == 0);
-//}
-
-//bool isEven(int num1, int num2)
-//{
-//    return (((num1 + num2) % 2) == 0);
-//}
-//string Play(int[] sumsArray, bool OppPlayer, int check)
-//{
-//    String result = "NO SOLUTION";
-//    int[,] PossibleMoves = new int[sumsArray.Length, 2];
-//    int MovesCounter = 0;
-
-//    Console.Out.WriteLine("");
-//    Console.Out.WriteLine((OppPlayer ? 1 : 0) + ": " + ArrayToString(sumsArray));
-
-//    if (sumsArray.Length == 1)
-//    {
-//        if (isEven(sumsArray[0]) && !OppPlayer)
-//            return "0";
-//        else
-//            return result;
-//    }
-//    else
-//    {
-//        //for(int PopCounter=1; PopCounter <= sumsArray.Length; PopCounter++)
-//        //{
-//        //    int[] Evens = new int[sumsArray.Length];
-//        //    int[] Remaining = new int[sumsArray.Length];
-
-//        //    //SplitEvens(sumsArray, PopCounter, Evens, Remaining);
-
-//        //    if (Evens.Length>0)
-//        //    {
-//        //        string value = Play(Remaining, !OppPlayer);
-
-//        //        if ((value == "NO SOLUTION") && !OppPlayer)
-//        //        {
-//        //            //Good Move. Add to list
-//        //        }
-//        //    }
-//        //}
-
-//        // Evaluate Good Moves
-//        // Return a Good Move
-
-//        //for (int iCounterX = 0; iCounterX < sumsArray.Length; iCounterX++)
-//        //{
-//        //    for (int iCounterY = iCounterX+1; iCounterY < sumsArray.Length; iCounterY++)
-//        //    {
-//        //        if (isEven(sumsArray[iCounterX], sumsArray[iCounterY]))
-//        //        {
-//        //                Console.Out.WriteLine((OppPlayer ? 1 : 0) + ": index ->" + iCounterX + "," + iCounterY);
-
-//        //            int[] nextMoveArray = TrimArray(sumsArray, iCounterX, iCounterY);
-
-//        //            string nextMove = Play(nextMoveArray, !OppPlayer);
-
-//        //            Console.Out.WriteLine(nextMove);
-
-//        //            if ((nextMove == "NO SOLUTION") && !OppPlayer)
-//        //            {
-//        //                PossibleMoves[MovesCounter, 0] = iCounterX;
-//        //                PossibleMoves[MovesCounter, 1] = iCounterY;
-//        //                MovesCounter++;
-//        //            }
-//        //        }
-//        //    }
-//        //}
-// //   }
-
-////    return result;
-////}

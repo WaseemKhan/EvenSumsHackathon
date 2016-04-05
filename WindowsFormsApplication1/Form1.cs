@@ -24,9 +24,15 @@ namespace EvenSumsApplication
             {
                 int[] sumsArray = Array.ConvertAll(txtArray.Text.Split(','), int.Parse);
 
-                Solution s = new Solution();
+                var watch = System.Diagnostics.Stopwatch.StartNew();
 
+                Solution5 s = new Solution5();
                 txtSolution.Text = s.solution(sumsArray);
+
+                watch.Stop();
+                float elapsedMs = watch.ElapsedMilliseconds/1000.0f;
+
+                txtSolution.Text = txtSolution.Text + "  " + elapsedMs.ToString() + "ms";
             }
         }
     }

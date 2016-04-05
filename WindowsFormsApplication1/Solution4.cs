@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EvenSumsApplication
-{
-    class Solution
+{   // [20, 4, 20, 14, 5, 8, 2, 4, 18]
+    // [1,2,3,4,5,6]
+    class Solution4
     {
         public string solution(int[] sumsArray)
         {
@@ -15,19 +16,27 @@ namespace EvenSumsApplication
 
         string Play(int[] sumsArray, bool OppPlayer, String stack)
         {
-            List<List<String>> AllMovesCombination = GenerateAllPossibleMoves(sumsArray);
+            String result = "NO SOLUTION";
+
             List<String> WinningMoves = new List<String>();
 
-            if (AllMovesCombination.Count()==0)
+            if (sumsArray.Count()==0)
             {
-                Console.WriteLine(stack + "Player " + (OppPlayer ? 1 : 0) + ": NO SOLUTION");
-                return "NO SOLUTION";
+                return result;
             }
-            else
-            { 
-                foreach(List<String> CombinationMoves in AllMovesCombination)
+
+            Console.WriteLine(stack + "Player " + (OppPlayer ? 1 : 0) + ": " + ArrayToString(sumsArray));
+
+            for (int PopCounter = sumsArray.Count(); PopCounter >=1 ; PopCounter--)
+            {
+                List<String> Moves = MakeMoves(sumsArray, PopCounter);
+
+                if (Moves.Count > 0)
                 {
-                    foreach (String Move in CombinationMoves)
+                    // Try the move with the smallest index first
+                    Moves.Sort();
+
+                    foreach (String Move in Moves)
                     {
                         int indexX = int.Parse(Move.Split(',')[0]);
                         int indexY = int.Parse(Move.Split(',')[1]);
@@ -62,25 +71,25 @@ namespace EvenSumsApplication
                                 nextMove = Play(nextMoveArray, !OppPlayer, stack + "   ");
                             }
 
-                        if ((nextMove == "NO SOLUTION") )
+                        if ((nextMove == "NO SOLUTION"))
                         {
                             WinningMoves.Add(Move);
                         }
+
+                        // Pick the first solution with the lowest starting index
+                        if (WinningMoves.Count()>1)
+                           break;
                     }
-                }
 
-                if (WinningMoves.Count==0)
-                {
-                    return "NO SOLUTION";
-                }
+                    if (WinningMoves.Count > 1)
+                        WinningMoves.Sort();
 
-                if (WinningMoves.Count > 1)
-                {
-                    WinningMoves.Sort();
+                    if (WinningMoves.Count >= 1)
+                        return WinningMoves[0];
                 }
-
-                return WinningMoves[0];
             }
+
+            return result;
         }
 
         List<List<String>> GenerateAllPossibleMoves(int[] sumsArray)

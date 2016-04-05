@@ -14,3 +14,12 @@ D:\Data\Work\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplic
 D:\Data\Work\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.exe
 D:\Data\Work\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.pdb
 D:\Data\Work\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.Form1.resources
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\bin\Debug\EvenSumsApplication.exe.config
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.exe
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.pdb
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\bin\Debug\EvenSumsApplication.exe
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\bin\Debug\EvenSumsApplication.pdb
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.Form1.resources
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.Properties.Resources.resources
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.csproj.GenerateResource.Cache
+E:\Work\Waseem\Development\EvenSumsHackathon\WindowsFormsApplication1\obj\Debug\EvenSumsApplication.csprojResolveAssemblyReference.cache
